@@ -1,7 +1,7 @@
 wagtailenforcer
 ==================
 
-![wagtailenforcer](http://www.joblo.com/images_arrownews/172AITHPodcast1.jpg =200x)
+[[http://www.joblo.com/images_arrownews/172AITHPodcast1.jpg|width=200px]]
 
 > WagtailEnforcer, the strong arm of the law.
 > -  Lt. Marion "Cobra" Cobretti

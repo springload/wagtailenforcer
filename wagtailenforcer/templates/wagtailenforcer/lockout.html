@@ -1,0 +1,21 @@
+{% extends "wagtailadmin/admin_base.html" %}
+{% load compress i18n %}
+{% block titletag %}{% trans "Set your new password" %}{% endblock %}
+{% block bodyclass %}login{% endblock %}
+
+{% block extra_css %}
+    {% compress css %}
+        <link rel="stylesheet" href="{{ STATIC_URL }}wagtailadmin/scss/layouts/login.scss" type="text/x-scss" />
+    {% endcompress %}
+{% endblock %}
+
+{% block furniture %}
+    <div class="content-wrapper">
+        <h1>{% trans "Too many login attempts" %}</h1>
+        <div class="messages">
+            <ul>
+                <li class="error">{% trans "Your username has been lockout. Please, contact with a site administrator." %}</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

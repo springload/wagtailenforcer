@@ -1,0 +1,68 @@
+{% extends "wagtailadmin/admin_base.html" %}
+{% load compress i18n %}
+{% block titletag %}{% trans "Set your new password" %}{% endblock %}
+{% block bodyclass %}login{% endblock %}
+
+{% block extra_css %}
+    {% compress css %}
+        <link rel="stylesheet" href="{{ STATIC_URL }}wagtailadmin/scss/layouts/login.scss" type="text/x-scss" />
+    {% endcompress %}
+{% endblock %}
+
+{% block furniture %}
+    <div class="content-wrapper">
+        {% if validlink %}
+            {% if form.errors %}
+                <div class="messages">
+                    <ul>
+                        {% for error in form.new_password1.errors %}
+                            <li class="error">{{ error|escape }}</li><br/>
+                        {% endfor %}
+                        {% for error in form.new_password2.errors %}
+                            <li class="error">{{ error|escape }}</li><br/>
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                            <li class="error">{{ error|escape }}</li><br/>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+          
+            <form method="post">
+                {% csrf_token %}
+                <h1>{% trans "Set your new password" %}</h1>
+
+                <ul class="fields">
+                    <li>
+                      <div class="field">
+                          {{ form.new_password1.label_tag }}
+                          {{ form.new_password1 }}
+                      </div>
+                    </li>
+                    <li>
+                      <div class="field">
+                          {{ form.new_password2.label_tag }}
+                          {{ form.new_password2 }}
+                      </div>
+                    </li>
+                    <li class="submit">
+                        <input type="submit" value="{% trans 'Reset password' %}"/>
+                    </li>
+                </ul>
+            </form>
+        {% else %}
+            <h1>{% trans "Set your new password" %}</h1>
+            <div class="messages">
+                <ul>
+                    <li class="error">{% trans "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset." %}</li>
+                </ul>
+            </div>
+            {% comment %}
+                By Jordi: The link below should use reverse url lookup but somehow this is nopt working
+                and it's not working in the realme.urls either. We pass the hardcoded url using extra_context.
+                Setting hardcoded url for the moment (unlikely to change)
+            {% endcomment %}
+            <p class="help"><a href="{{ reset_password_url }}">{% trans "Request a password reset" %}</a></p>
+        {% endif %}
+    </div>
+{% endblock %}

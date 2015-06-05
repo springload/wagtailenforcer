@@ -2,9 +2,6 @@
 
 import sys, os
 
-from wagtail.wagtailcore import __version__
-
-
 try:
     from setuptools import setup, find_packages
 except ImportError:
@@ -29,7 +26,7 @@ install_requires = [
 
 setup(
     name='wagtailenforcer',
-    version=__version__,
+    version='0.0.1',
     description='WagtailEnforcer, the Wagtail arm of the law.',
     author='Jordi J. Tablada',
     author_email='jordi@springload.co.nz',

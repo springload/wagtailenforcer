@@ -1,2 +1,2 @@
 include README
-recursive-include wagtailembedder *.py
+recursive-include wagtailenforcer *.py

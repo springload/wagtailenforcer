@@ -1,2 +1,2 @@
-include README
-recursive-include wagtailenforcer *.py
+include README.md
+recursive-include wagtailenforcer *.py *.html *.js *.css

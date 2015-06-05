@@ -22,10 +22,9 @@ except ImportError:
 PY3 = sys.version_info[0] == 3
 
 install_requires = [
-    'wagtail>0.8.5',
     'django-easysettings',
-    'git+https://github.com/tarak/django-password-policies',
-    'git+https://github.com/springload/django-axes',
+    # 'git+https://github.com/tarak/django-password-policies',
+    # 'git+https://github.com/springload/django-axes',
 ]
 
 setup(

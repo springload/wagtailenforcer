@@ -1,12 +1,15 @@
 wagtailenforcer
 ==================
 
+![wagtailenforcer](http://www.joblo.com/images_arrownews/172AITHPodcast1.jpg =200x
+)
+
 > WagtailEnforcer, the strong arm of the law.
 > -  Lt. Marion "Cobra" Cobretti
 
 If you need to enforce security protocols on your Wagtail site you've come to the right place.
 
-Wagtailenforcers makes use of the following packages to ensure strict password policies and other security protocols are implemented.
+Wagtailenforcer makes use of the following packages to ensure strict password policies and other security protocols are implemented.
 
 * [Password policies](https://github.com/tarak/django-password-policies)
 * [Axes](https://github.com/springload/django-axes)
@@ -18,7 +21,7 @@ Wagtailenforcers makes use of the following packages to ensure strict password p
 $ pip install git+https://github.com/springload/wagtailenforcer
 
 ```
-Time to edit the **settings.py** file. ``ÌNSTALLED_APPS``` should have:
+Time to edit the **settings.py** file. ```INSTALLED_APPS``` should have:
 
 ```
 ...
@@ -29,7 +32,7 @@ Time to edit the **settings.py** file. ``ÌNSTALLED_APPS``` should have:
 ...
 ```
 
-.. and ```MIDDLEWARE_CLASSES``:
+.. and ```MIDDLEWARE_CLASSES```:
 
 ```
     'axes.middleware.FailedLoginMiddleware'

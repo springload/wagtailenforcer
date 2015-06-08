@@ -3,14 +3,10 @@ from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import permission_required
-from django.core.exceptions import PermissionDenied
-
-from wagtail.wagtaildocs.models import Document
-from wagtail.wagtailsearch.backends import get_search_backends
 
 from wagtail.wagtailcore.compat import AUTH_USER_APP_LABEL, AUTH_USER_MODEL_NAME
 
-from wagtailenforcer.forms import UserEditForm, DocumentForm
+from wagtailenforcer.forms import UserEditForm
 
 
 User = get_user_model()
@@ -22,7 +18,7 @@ change_user_perm = "{0}.change_{1}".format(AUTH_USER_APP_LABEL, AUTH_USER_MODEL_
 
 
 @permission_required(change_user_perm)
-def edit_user(request, user_id):
+def edit(request, user_id):
     user = get_object_or_404(User, id=user_id)
     if request.POST:
         form = UserEditForm(request.POST, instance=user)

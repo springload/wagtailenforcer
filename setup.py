@@ -20,6 +20,7 @@ PY3 = sys.version_info[0] == 3
 
 install_requires = [
     'django-easysettings',
+    'django-antivirus-field'
     # 'git+https://github.com/tarak/django-password-policies',
     # 'git+https://github.com/springload/django-axes',
 ]

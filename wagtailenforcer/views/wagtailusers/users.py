@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import permission_required
 
 from wagtail.wagtailcore.compat import AUTH_USER_APP_LABEL, AUTH_USER_MODEL_NAME
 
-from wagtailenforcer.forms import UserEditForm
+from wagtailenforcer.forms.wagtailusers import UserEditForm
 
 
 User = get_user_model()

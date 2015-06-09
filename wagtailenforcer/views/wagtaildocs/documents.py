@@ -7,7 +7,7 @@ from django.core.exceptions import PermissionDenied
 from wagtail.wagtaildocs.models import Document
 from wagtail.wagtailsearch.backends import get_search_backends
 
-from wagtailenforcer.forms import DocumentForm
+from wagtailenforcer.forms.wagtaildocs import DocumentForm
 
 
 @permission_required('wagtaildocs.add_document')

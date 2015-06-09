@@ -1,6 +1,6 @@
 import json
 
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import permission_required
 
@@ -10,7 +10,7 @@ from wagtail.wagtailsearch.backends import get_search_backends
 
 from wagtail.wagtaildocs.models import Document
 
-from wagtailenforcer.forms import DocumentForm
+from wagtailenforcer.forms.wagtaildocs import DocumentForm
 
 
 @permission_required('wagtailadmin.access_admin')

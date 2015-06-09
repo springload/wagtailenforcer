@@ -56,6 +56,12 @@ AXES_LOGIN_FAILURE_LIMIT = 5
 AXES_LOCK_OUT_AT_FAILURE = True
 AXES_ONLY_USER_FAILURES = True  # Lock out based on username and not IP or UserAgent
 AXES_LOCKOUT_TEMPLATE = 'wagtailenforcer/lockout.html'
+
+# Antivirus
+CLAMAV_ACTIVE = True
+
+# Allowed document uploads extensions
+ALLOWED_DOCUMENT_EXTENSIONS = ['pdf']
 ```
 
 On top of your app **urls.py** file:

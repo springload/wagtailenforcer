@@ -3,18 +3,12 @@ from __future__ import unicode_literals
 from django import forms
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext_lazy as _
-from django.core.exceptions import ValidationError
 from django.contrib.auth.forms import PasswordResetForm
 from django.utils.translation import ugettext_lazy
-
-from wagtail.wagtaildocs import forms as wtforms
 
 from password_policies.conf import settings
 from password_policies.forms import PasswordPoliciesForm
 from password_policies.forms.fields import PasswordPoliciesField
-
-from django_antivirus_field.utils import is_infected
-
 
 from wagtailenforcer.validators import UpperCaseLetterValidator
 
@@ -48,21 +42,6 @@ class PasswordResetForm(PasswordResetForm):
         # else:
         #     # No user accounts exist
         #     raise forms.ValidationError(_("This email address is not recognised."))
-
-        return cleaned_data
-
-
-class DocumentForm(wtforms.DocumentForm):
-    """
-    Override of wagtail.wagtaildocs.forms to ensure uploaded file gets scanned before being properly saved
-    """
-    def clean(self):
-        cleaned_data = super(DocumentForm, self).clean()
-        field = self.cleaned_data['file']
-        has_virus, name = is_infected(field.file.read())
-
-        if has_virus:
-            raise ValidationError(_('Virus "{}" was detected').format(name))
 
         return cleaned_data
 

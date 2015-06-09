@@ -5,10 +5,10 @@ from wagtail.wagtailadmin.views import account
 
 from axes.decorators import watch_login
 
-from wagtailenforcer.forms import PasswordForm, PasswordResetForm
+from wagtailenforcer.forms.wagtailusers import PasswordForm, PasswordResetForm
 from wagtailenforcer.views.wagtailusers import users
-from wagtailenforcer.views.wagtaildocs import documents, chooser
-
+from wagtailenforcer.views.wagtaildocs import documents, chooser as chooser_docs
+from wagtailenforcer.views.wagtailimages import chooser as chooser_images, images, multiple
 
 urlpatterns = [
     # Password reset
@@ -35,7 +35,12 @@ urlpatterns = [
 
     url(r'^documents/add/$', documents.add, name='wagtaildocs_add_document'),
     url(r'^documents/edit/(\d+)/$', documents.edit, name='wagtaildocs_edit_document'),
-    url(r'^documents/chooser/$', chooser.chooser, name='wagtaildocs_chooser'),
-    url(r'^documents/chooser/upload/$', chooser.chooser_upload, name='wagtaildocs_chooser_upload'),
+    url(r'^documents/chooser/$', chooser_docs.chooser, name='wagtaildocs_chooser'),
+    url(r'^documents/chooser/upload/$', chooser_docs.chooser_upload, name='wagtaildocs_chooser_upload'),
 
+    url(r'^(\d+)/$', images.edit, name='wagtailimages_edit_image'),
+    url(r'^images/add/$', images.add, name='wagtailimages_add_image'),
+    url(r'^images/chooser/upload/$', chooser_images.chooser_upload, name='wagtailimages_chooser_upload'),
+    url(r'^images/multiple/add/$', multiple.add, name='wagtailimages_add_multiple'),
+    url(r'^images/multiple/(\d+)/$', multiple.edit, name='wagtailimages_edit_multiple'),
 ]

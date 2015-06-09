@@ -3,14 +3,10 @@ from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import permission_required
-from django.core.exceptions import PermissionDenied
-
-from wagtail.wagtaildocs.models import Document
-from wagtail.wagtailsearch.backends import get_search_backends
 
 from wagtail.wagtailcore.compat import AUTH_USER_APP_LABEL, AUTH_USER_MODEL_NAME
 
-from wagtailenforcer.forms import UserEditForm, DocumentForm
+from wagtailenforcer.forms.wagtailusers import UserEditForm
 
 
 User = get_user_model()

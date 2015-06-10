@@ -5,7 +5,7 @@
             <th>User</th>
             <th>IP</th>
             <th>Agent</th>
-            <th>Failures</th>
+            <th>Actions</th>
         </thead>
         <tbody>
             {% for attempt in attempts %}
@@ -13,7 +13,7 @@
                     <td>{{ attempt.username }}</td>
                     <td>{{ attempt.ip_address }}</td>
                     <td>{{ attempt.user_agent }}</td>
-                    <td>{{ attempt.failures_since_start }}</td>
+                    <td><a href="{% url 'wagtailenforcer.views.axes.views.reset' attempt.id %}" class="button">{% trans "Unblock" %}</a></td>
                 </tr>
             {% endfor %}
         </tbody>

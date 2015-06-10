@@ -1,0 +1,71 @@
+{% extends "wagtailadmin/base.html" %}
+{% load i18n %}
+{% block titletag %}{% blocktrans%}Attempts{% endblocktrans %}{% endblock %}
+{% block bodyclass %}menu-forms{% endblock %}
+{% block extra_js %}
+    {% include "wagtailadmin/shared/datetimepicker_translations.html" %}
+
+    <script>
+        $(function() {
+            $('#id_date_from').datetimepicker({
+                timepicker: false,
+                format: 'Y-m-d',
+                i18n: {
+                    lang: window.dateTimePickerTranslations
+                },
+                lang: 'lang'
+            });
+            $('#id_date_to').datetimepicker({
+                timepicker: false,
+                format: 'Y-m-d',
+                i18n: {
+                    lang: window.dateTimePickerTranslations
+                },
+                lang: 'lang'
+            });
+        });
+    </script>
+{% endblock %}
+{% block content %}
+    <header class="nice-padding">
+        <form action="" method="get">
+            <div class="row">
+                <div class="left">
+                    <div class="col">
+                        <h1 class="icon icon-form">
+                        Blocked Users
+                        </h1>
+                    </div>
+                    <!--<div class="col search-bar">
+                        <ul class="fields row rowflush">
+                            {% for field in select_date_form %}
+                                {% include "wagtailadmin/shared/field_as_li.html" with field=field field_classes="field-small" li_classes="col3" %}
+                            {% endfor %}
+                            <li class="submit col2">
+                                <button name="action" value="filter" class="button">{% trans 'Filter' %}</button>
+                            </li>
+                        </ul>
+                    </div>-->
+                </div>
+                <!--<div class="right">
+                   <button name="action" value="CSV" class="button bicolor icon icon-download">{% trans 'Download CSV' %}</button>
+                </div>-->
+            </div>
+        </form>
+    </header>
+    <div class="nice-padding">
+        {% if attempts %}
+
+            {% include "wagtailenforcer/list_attempts.html" %}
+
+            {% include "wagtailenforcer/includes/pagination_nav.html" %}
+
+        {% else %}
+            <div class="messages">
+                <ul>
+                    <li class="warning">{% blocktrans%}No blocked users yet.{% endblocktrans %}</li>
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

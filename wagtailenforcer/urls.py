@@ -31,7 +31,7 @@ urlpatterns = [
     ),
     url(r'^login/$', watch_login(account.login), name='wagtailadmin_login'),
 
-    url(r'^users/([^\/]+)/$', users.edit, name='wagtailusers_users_edit'),
+    url(r'^users/(\d+)/$', users.edit, name='wagtailusers_users_edit'),
 
     url(r'^documents/add/$', documents.add, name='wagtaildocs_add_document'),
     url(r'^documents/edit/(\d+)/$', documents.edit, name='wagtaildocs_edit_document'),

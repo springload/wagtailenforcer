@@ -10,8 +10,9 @@ from wagtailenforcer.views.wagtailusers import users
 from wagtailenforcer.views.wagtaildocs import documents, chooser as chooser_docs
 from wagtailenforcer.views.wagtailimages import chooser as chooser_images, images, multiple
 
+# Here we put all the overriden Wagtail urls from the different wagtail apps
+
 urlpatterns = [
-    # Password reset
     url(
         r'^password_reset/$', 'django.contrib.auth.views.password_reset', {
             'template_name': 'wagtailadmin/account/password_reset/form.html',
@@ -32,6 +33,7 @@ urlpatterns = [
     url(r'^login/$', watch_login(account.login), name='wagtailadmin_login'),
 
     url(r'^users/(\d+)/$', users.edit, name='wagtailusers_users_edit'),
+    url(r'^users/new/$', users.create, name='wagtailusers_users_create'),
 
     url(r'^documents/add/$', documents.add, name='wagtaildocs_add_document'),
     url(r'^documents/edit/(\d+)/$', documents.edit, name='wagtaildocs_edit_document'),

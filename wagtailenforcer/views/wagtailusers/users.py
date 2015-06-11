@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import permission_required
 
 from wagtail.wagtailcore.compat import AUTH_USER_APP_LABEL, AUTH_USER_MODEL_NAME
 
-from wagtailenforcer.forms.wagtailusers import UserEditForm
+from wagtailenforcer.forms.wagtailusers import UserEditForm, UserCreationForm
 
 
 User = get_user_model()
@@ -15,6 +15,24 @@ User = get_user_model()
 # management actions, but this may vary according to the AUTH_USER_MODEL
 # setting
 change_user_perm = "{0}.change_{1}".format(AUTH_USER_APP_LABEL, AUTH_USER_MODEL_NAME.lower())
+
+
+@permission_required(change_user_perm)
+def create(request):
+    if request.POST:
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            messages.success(request, _("User '{0}' created.").format(user))
+            return redirect('wagtailusers_users_index')
+        else:
+            messages.error(request, _("The user could not be created due to errors."))
+    else:
+        form = UserCreationForm()
+
+    return render(request, 'wagtailusers/users/create.html', {
+        'form': form,
+    })
 
 
 @permission_required(change_user_perm)

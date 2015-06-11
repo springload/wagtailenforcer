@@ -10,6 +10,8 @@ from password_policies.conf import settings
 from password_policies.forms import PasswordPoliciesForm
 from password_policies.forms.fields import PasswordPoliciesField
 
+from wagtail.wagtailusers.forms import UserCreationForm as BaseUserCreationForm
+
 from wagtailenforcer.validators import UpperCaseLetterValidator
 
 User = get_user_model()
@@ -55,6 +57,18 @@ class PasswordForm(PasswordPoliciesForm):
         max_length=settings.PASSWORD_MAX_LENGTH,
         min_length=settings.PASSWORD_MIN_LENGTH,
         validators=[UpperCaseLetterValidator()]
+    )
+
+
+class UserCreationForm(BaseUserCreationForm):
+
+    password1 = PasswordPoliciesField(
+        label=_("New password"),
+        max_length=settings.PASSWORD_MAX_LENGTH,
+        min_length=settings.PASSWORD_MIN_LENGTH,
+        help_text=_("Leave blank if not changing."),
+        validators=[UpperCaseLetterValidator()],
+        required=False,
     )
 
 

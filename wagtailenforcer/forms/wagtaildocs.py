@@ -13,7 +13,7 @@ INVALID_DOCUMENT_ERROR = _(
 )
 
 
-class DocumentForm(forms.DocumentForm):
+class DocumentForm(forms.BaseDocumentForm):
     """
     Override of wagtail.wagtaildocs.forms to ensure uploaded file gets scanned before being properly saved
     """

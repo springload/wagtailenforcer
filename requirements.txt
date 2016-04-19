@@ -1,0 +1,2 @@
+pyClamd>=0.3.17
+django-password-policies>=0.4.1

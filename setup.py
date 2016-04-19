@@ -19,18 +19,18 @@ except ImportError:
 PY3 = sys.version_info[0] == 3
 
 install_requires = [
-    'django-easysettings',
-    'django-antivirus-field'
+    'password_policies',
+    'pyclamd'
     # 'git+https://github.com/tarak/django-password-policies',
     # 'git+https://github.com/springload/django-axes',
 ]
 
 setup(
     name='wagtailenforcer',
-    version='0.0.1',
+    version='1.0.0',
     description='WagtailEnforcer, the Wagtail arm of the law.',
-    author='Jordi J. Tablada',
-    author_email='jordi@springload.co.nz',
+    author='Jordi J. Tablada, Dave Cartwright',
+    author_email='jordi@springload.co.nz, dave@springload.co.nz',
     url='https://github.com/springload/wagtailenforcer/',
     packages=find_packages(),
     include_package_data=True,

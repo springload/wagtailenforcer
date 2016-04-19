@@ -19,7 +19,9 @@ except ImportError:
 PY3 = sys.version_info[0] == 3
 
 install_requires = [
-    'password_policies',
+    'django-password-policies',
+    'django-axes',
+    'axes',
     'pyclamd'
     # 'git+https://github.com/tarak/django-password-policies',
     # 'git+https://github.com/springload/django-axes',

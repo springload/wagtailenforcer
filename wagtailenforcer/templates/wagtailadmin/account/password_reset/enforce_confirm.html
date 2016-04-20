@@ -1,32 +1,31 @@
 {% extends "wagtailadmin/admin_base.html" %}
-{% load compress i18n %}
+{% load staticfiles i18n %}
 {% block titletag %}{% trans "Set your new password" %}{% endblock %}
 {% block bodyclass %}login{% endblock %}
 
 {% block extra_css %}
-    {% compress css %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}wagtailadmin/scss/layouts/login.scss" type="text/x-scss" />
-    {% endcompress %}
+    {{ block.super }}
+
+    <link rel="stylesheet" href="{% static 'wagtailadmin/css/layouts/login.css' %}" type="text/css" />
 {% endblock %}
 
 {% block furniture %}
     <div class="content-wrapper">
         {% if validlink %}
             {% if form.errors %}
-                Hello my darling hello my dreamgirl
                 <div class="messages">
-                    <ul>
-                        {% for error in form.new_password1.errors %}
-                            <li class="error">{{ error|escape }}</li><br/>
-                        {% endfor %}
-                        {% for error in form.new_password2.errors %}
-                            <li class="error">{{ error|escape }}</li><br/>
-                        {% endfor %}
-                        {% for error in form.non_field_errors %}
-                            <li class="error">{{ error|escape }}</li><br/>
-                        {% endfor %}
-                    </ul>
-                </div>
+                        <ul>
+                            {% for error in form.new_password1.errors %}
+                                <li class="error">{{ error|escape }}</li><br/>
+                            {% endfor %}
+                            {% for error in form.new_password2.errors %}
+                                <li class="error">{{ error|escape }}</li><br/>
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <li class="error">{{ error|escape }}</li><br/>
+                            {% endfor %}
+                        </ul>
+                    </div>
             {% endif %}
 
             <form method="post">

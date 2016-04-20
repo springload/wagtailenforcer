@@ -24,9 +24,8 @@ Time to edit the **settings.py** file. ```INSTALLED_APPS``` should have:
 
 ```
 ...
-    'password_policies',
     'axes',
-    'django_antivirus_field',
+    'password_policies',
     'wagtailenforcer',
 ...
 ```
@@ -34,7 +33,8 @@ Time to edit the **settings.py** file. ```INSTALLED_APPS``` should have:
 .. and ```MIDDLEWARE_CLASSES```:
 
 ```
-    'axes.middleware.FailedLoginMiddleware'
+    'axes.middleware.FailedLoginMiddleware',
+    'wagtailenforcer.middleware.WagtailenforcerMiddleware'
 ```
 
 Some extra settings:

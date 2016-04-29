@@ -19,12 +19,12 @@ except ImportError:
 PY3 = sys.version_info[0] == 3
 
 install_requires = [
+    'wagtail>=1.3'
+    'django>=1.8'
     'django-password-policies',
     'django-axes',
     'axes',
     'pyclamd'
-    # 'git+https://github.com/tarak/django-password-policies',
-    # 'git+https://github.com/springload/django-axes',
 ]
 
 setup(

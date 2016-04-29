@@ -19,17 +19,16 @@ except ImportError:
 PY3 = sys.version_info[0] == 3
 
 install_requires = [
-    'wagtail>=1.3'
-    'django>=1.8'
+    'wagtail>=1.3',
+    'django>=1.8',
     'django-password-policies',
     'django-axes',
-    'axes',
-    'pyclamd'
+    'pyclamd',
 ]
 
 setup(
     name='wagtailenforcer',
-    version='1.0.0',
+    version='1.0.1',
     description='WagtailEnforcer, the Wagtail arm of the law.',
     author='Jordi J. Tablada, Dave Cartwright',
     author_email='jordi@springload.co.nz, dave@springload.co.nz',

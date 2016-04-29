@@ -12,7 +12,6 @@ Wagtailenforcer makes use of the following packages to ensure strict password po
 
 * [Password policies](https://github.com/tarak/django-password-policies)
 * [Axes](https://github.com/springload/django-axes)
-* [Antivirus field](https://github.com/budurli/django-antivirus-field)
 
 # Quickstart
 

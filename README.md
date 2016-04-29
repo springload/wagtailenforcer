@@ -17,7 +17,7 @@ Wagtailenforcer makes use of the following packages to ensure strict password po
 # Quickstart
 
 ```
-$ pip install git+https://github.com/springload/wagtailenforcer
+$ pip install wagtailenforcer
 
 ```
 Time to edit the **settings.py** file. ```INSTALLED_APPS``` should have:

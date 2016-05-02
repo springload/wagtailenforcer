@@ -28,7 +28,7 @@ install_requires = [
 
 setup(
     name='wagtailenforcer',
-    version='1.0.1',
+    version='1.0.2',
     description='WagtailEnforcer, the Wagtail arm of the law.',
     author='Jordi J. Tablada, Dave Cartwright',
     author_email='jordi@springload.co.nz, dave@springload.co.nz',
@@ -36,7 +36,6 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     license='BSD',
-    long_description=open('README.md').read(),
     classifiers=[
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',

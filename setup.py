@@ -28,10 +28,10 @@ install_requires = [
 
 setup(
     name='wagtailenforcer',
-    version='1.0.2',
+    version='1.0.3',
     description='WagtailEnforcer, the Wagtail arm of the law.',
-    author='Jordi J. Tablada, Dave Cartwright',
-    author_email='jordi@springload.co.nz, dave@springload.co.nz',
+    author='Jordi J. Tablada, Dave Cartwright, Richard McMillan',
+    author_email='jordi@springload.co.nz, dave@springload.co.nz, richardm@springload.co.nz',
     url='https://github.com/springload/wagtailenforcer/',
     packages=find_packages(),
     include_package_data=True,

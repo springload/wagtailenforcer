@@ -16,6 +16,8 @@ from wagtailenforcer.validators import UpperCaseLetterValidator
 
 User = get_user_model()
 
+standard_fields = set(['email', 'first_name', 'last_name', 'is_superuser', 'groups'])
+
 
 class PasswordResetForm(PasswordResetForm):
     email = forms.EmailField(label=ugettext_lazy("Enter your email address to reset your password"), max_length=254)
@@ -73,20 +75,37 @@ class UserCreationForm(BaseUserCreationForm):
 
 
 class UserEditForm(forms.ModelForm):
+
+    """
+    Intelligently sets up the username field if it is infact a username. If the
+    User model has been swapped out, and the username field is an email or
+    something else, dont touch it.
+    """
+    def __init__(self, *args, **kwargs):
+        super(UserEditForm, self).__init__(*args, **kwargs)
+        if User.USERNAME_FIELD == 'username':
+            field = self.fields['username']
+            field.regex = r"^[\w.@+-]+$"
+            field.help_text = _("Required. 30 characters or fewer. Letters, "
+                                "digits and @/./+/-/_ only.")
+            field.error_messages = field.error_messages.copy()
+            field.error_messages.update({
+                'invalid': _("This value may contain only letters, numbers "
+                             "and @/./+/-/_ characters.")})
+
+    @property
+    def username_field(self):
+        return self[User.USERNAME_FIELD]
+
+    def separate_username_field(self):
+        return User.USERNAME_FIELD not in standard_fields
+
     required_css_class = "required"
 
     error_messages = {
         'duplicate_username': _("A user with that username already exists."),
         'password_mismatch': _("The two password fields didn't match."),
     }
-    username = forms.RegexField(
-        label=_("Username"),
-        max_length=30,
-        regex=r'^[\w.@+-]+$',
-        help_text=_("Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only."),
-        error_messages={
-            'invalid': _("This value may contain only letters, numbers and @/./+/-/_ characters.")
-        })
 
     email = forms.EmailField(required=True, label=_("Email"))
     first_name = forms.CharField(required=True, label=_("First Name"))

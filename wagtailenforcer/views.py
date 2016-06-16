@@ -25,7 +25,7 @@ def edit_user(request, user_id):
         if form.is_valid():
             user = form.save()
             messages.success(request, _("User '{0}' updated.").format(user))
-            return redirect('wagtailusers_users_index')
+            return redirect('wagtailusers_users:index')
         else:
             messages.error(request, _("The user could not be saved due to errors."))
     else:

@@ -1,10 +1,6 @@
-wagtailenforcer
-==================
-
-<img src="http://www.joblo.com/images_arrownews/172AITHPodcast1.jpg" width="200">
+# wagtailenforcer [![PyPI](https://img.shields.io/pypi/v/wagtailenforcer.svg)](https://pypi.python.org/pypi/wagtailenforcer)
 
 > WagtailEnforcer, the strong arm of the law.
-> -  Lt. Marion "Cobra" Cobretti
 
 If you need to enforce security protocols on your Wagtail site you've come to the right place.
 
@@ -13,15 +9,21 @@ Wagtailenforcer makes use of the following packages to ensure strict password po
 * [Password policies](https://github.com/tarak/django-password-policies)
 * [Axes](https://github.com/springload/django-axes)
 
-# Quickstart
+<img src="./cobra.jpg" width="200">
 
-```
-$ pip install wagtailenforcer
+> -  Lt. Marion "Cobra" Cobretti
 
+*Check out [Awesome Wagtail](https://github.com/springload/awesome-wagtail) for more awesome packages and resources from the Wagtail community.*
+
+## Quickstart
+
+```sh
+pip install wagtailenforcer
 ```
+
 Time to edit the **settings.py** file. ```INSTALLED_APPS``` should have:
 
-```
+```python
 ...
     'axes',
     'password_policies',
@@ -31,14 +33,14 @@ Time to edit the **settings.py** file. ```INSTALLED_APPS``` should have:
 
 .. and ```MIDDLEWARE_CLASSES```:
 
-```
+```python
     'axes.middleware.FailedLoginMiddleware',
     'wagtailenforcer.middleware.WagtailenforcerMiddleware'
 ```
 
 Some extra settings:
 
-```
+```python
 # Password policy settings
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 PASSWORD_CHECK_ONLY_AT_LOGIN = True
@@ -65,7 +67,7 @@ ALLOWED_DOCUMENT_EXTENSIONS = ['pdf']
 
 On top of your app **urls.py** file:
 
-```
+```python
 wagtailadmin_urls.urlpatterns = wagtailenforcer_urls + wagtailadmin_urls.urlpatterns
 ```
 

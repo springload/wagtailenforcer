@@ -72,3 +72,15 @@ wagtailadmin_urls.urlpatterns = wagtailenforcer_urls + wagtailadmin_urls.urlpatt
 ```
 
 Check the docs of the apps if you need to do changes to the predefined settings.
+
+## Development
+
+### Releases
+
+- Make a new branch for the release of the new version.
+- Update the [CHANGELOG](https://github.com/springload/wagtailenforcer/CHANGELOG.md).
+- Update the version number in `setup.py`, following semver.
+- Make a PR and squash merge it.
+- Back on master with the PR merged, use `make publish` (confirm, and enter your password).
+- Finally, go to GitHub and create a release and a tag for the new version.
+- Done!

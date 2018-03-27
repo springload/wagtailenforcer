@@ -42,6 +42,6 @@ def get_clam():
         try:
             cd = pyclamd.ClamdNetworkSocket()
             cd.ping()
-            return clam
+            return cd
         except pyclamd.ConnectionError:
             raise ValueError('could not connect to clamd server either by unix or network socket')

@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - ConnectionError is now catched properly and returned with a custom error message
 - Return the correct network socket connection object when the unix socket connection fails
 
+### Changed
+
+- Do not register Calm AV signals when `CLAMAV_ACTIVE` is set to `False`
+
 ## [1.0.3] - 2016-06-16
 
 ### Added

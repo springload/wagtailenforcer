@@ -39,8 +39,8 @@ def get_clam():
         return clam
     except pyclamd.ConnectionError:
         # if failed, test for network socket
-        cd = pyclamd.ClamdNetworkSocket()
         try:
+            cd = pyclamd.ClamdNetworkSocket()
             cd.ping()
             return clam
         except pyclamd.ConnectionError:

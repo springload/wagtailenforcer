@@ -21,7 +21,7 @@ PY3 = sys.version_info[0] == 3
 install_requires = [
     'wagtail>=1.4',
     'django>=1.8',
-    'django-password-policies',
+    'django-password-policies-iplweb>=0.4.4b1',
     'django-axes',
     'pyclamd',
 ]

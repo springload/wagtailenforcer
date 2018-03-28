@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Compatibility with Django 1.10
 
+### Changed
+
+- The project now depends on `django-password-policies-iplweb`, a maintained fork of the original `django-password-policies`.
+
 ## [1.0.4] - 2018-03-27
 
 ### Fixed

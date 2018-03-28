@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django import forms
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.auth.forms import PasswordResetForm
+from django.contrib.auth.forms import PasswordResetForm as BasePasswordResetForm
 from django.utils.translation import ugettext_lazy
 
 from password_policies.conf import settings
@@ -19,7 +19,7 @@ User = get_user_model()
 standard_fields = set(['email', 'first_name', 'last_name', 'is_superuser', 'groups'])
 
 
-class PasswordResetForm(PasswordResetForm):
+class PasswordResetForm(BasePasswordResetForm):
     email = forms.EmailField(label=ugettext_lazy("Enter your email address to reset your password"), max_length=254)
 
     def clean(self):

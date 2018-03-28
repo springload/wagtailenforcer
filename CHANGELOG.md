@@ -6,7 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-...
+### Added
+
+- Compatibility with Django 1.10
 
 ## [1.0.4] - 2018-03-27
 

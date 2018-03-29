@@ -2,7 +2,13 @@ from __future__ import unicode_literals
 from django.contrib import messages
 from django.http import JsonResponse
 
-class WagtailenforcerMiddleware(object):
+try:
+    from django.utils.deprecation import MiddlewareMixin
+except ImportError:
+    MiddlewareMixin = object
+
+
+class WagtailenforcerMiddleware(MiddlewareMixin):
 
     """
     Provides full logging of requests and responses

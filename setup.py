@@ -22,8 +22,8 @@ install_requires = [
     'wagtail>=1.4',
     'django>=1.8',
     'django-password-policies-iplweb>=0.4.4b1',
-    'django-axes',
-    'pyclamd',
+    'django-axes>=2.0.0,<3.0.0',
+    'pyClamd>=0.3.17',
 ]
 
 setup(

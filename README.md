@@ -6,7 +6,7 @@ If you need to enforce security protocols on your Wagtail site you've come to th
 
 Wagtailenforcer makes use of the following packages to ensure strict password policies and other security protocols are implemented.
 
-* [Password policies](https://github.com/tarak/django-password-policies)
+* [Password policies](https://github.com/iplweb/django-password-policies-iplweb)
 * [Axes](https://github.com/springload/django-axes)
 
 <img src="./cobra.jpg" width="200">

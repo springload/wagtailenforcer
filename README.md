@@ -34,7 +34,6 @@ Time to edit the **settings.py** file. ```INSTALLED_APPS``` should have:
 .. and ```MIDDLEWARE_CLASSES```:
 
 ```python
-    'axes.middleware.FailedLoginMiddleware',
     'wagtailenforcer.middleware.WagtailenforcerMiddleware'
 ```
 
@@ -65,9 +64,11 @@ CLAMAV_ACTIVE = True
 ALLOWED_DOCUMENT_EXTENSIONS = ['pdf']
 ```
 
-On top of your app **urls.py** file:
+In **urls.py**:
 
 ```python
+from wagtailenforcer import urls as wagtailenforcer_urls
+
 wagtailadmin_urls.urlpatterns = wagtailenforcer_urls + wagtailadmin_urls.urlpatterns
 ```
 

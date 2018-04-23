@@ -6,11 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-...
+### Fixed
+
+- Crash when uploading an image (introduced in 1.1.1)
 
 ## [1.1.1] - 2018-04-23
 
-### Fixed
+### Fixed
 
 - Crash when saving an image (as opposed to uploading an image)
 

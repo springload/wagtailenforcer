@@ -13,7 +13,7 @@ def check_for_virus(instance):
         with open(instance.file.path, 'rb') as file:
             file_content = file.read()
     else:
-        file_content = file.read()
+        file_content = instance.file.read()
 
     has_virus, name = is_infected(file_content)
 

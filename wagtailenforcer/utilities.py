@@ -9,7 +9,13 @@ from .exceptions import EnforcerVirusException
 
 
 def check_for_virus(instance):
-    has_virus, name = is_infected(instance.file.read())
+    if instance.file.closed:
+        with open(instance.file.path, 'rb') as file:
+            file_content = file.read()
+    else:
+        file_content = file.read()
+
+    has_virus, name = is_infected(file_content)
 
     if has_virus:
         raise EnforcerVirusException(_('Virus "{}" was detected').format(name))

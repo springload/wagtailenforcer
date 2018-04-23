@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ...
 
+## [1.1.1] - 2018-04-23
+
+### Fixed
+
+- Crash when saving an image (as opposed to uploading an image)
+
 ## [1.1.0] - 2018-04-04
 
 ### Added
@@ -47,7 +53,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 Initial Release
 
-[Unreleased]: https://github.com/springload/wagtailenforcer/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/springload/wagtailenforcer/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/springload/wagtailenforcer/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/springload/wagtailenforcer/compare/v1.0.4...v1.1.0
 [1.0.4]: https://github.com/springload/wagtailenforcer/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/springload/wagtailenforcer/compare/v1.0.2...v1.0.3

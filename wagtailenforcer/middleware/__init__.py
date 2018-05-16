@@ -1,1 +1,1 @@
-from wagtail_enforcer_middleware import WagtailenforcerMiddleware
+from .wagtail_enforcer_middleware import WagtailenforcerMiddleware

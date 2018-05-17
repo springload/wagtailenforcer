@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ...
 
+## [1.1.3] - 2018-05-17
+
+### Fixed
+
+- Issue with python 3.6 relative import
+
+
 ## [1.1.2] - 2018-04-23
 
 ### Fixed

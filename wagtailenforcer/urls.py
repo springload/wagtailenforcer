@@ -6,6 +6,7 @@ from wagtail.wagtailadmin.views import account as wagtail_account_views
 from axes.decorators import watch_login
 
 from wagtailenforcer.views import account as account_views
+from wagtailenforcer.views.wagtailadmin.account import change_password
 from wagtailenforcer.views.wagtailusers import users
 
 # Here we put all the overriden Wagtail urls from the different wagtail apps
@@ -21,7 +22,7 @@ urlpatterns = [
     url(r'^password_reset/complete/$', account_views.password_reset_complete, name='wagtailadmin_password_reset_complete'),
 
     url(r'^login/$', watch_login(wagtail_account_views.login), name='wagtailadmin_login'),
-
+    url(r"^account/change_password/", change_password, name="password_change"),
     url(r'^users/(\d+)/$', users.edit, name='wagtailusers_users_edit'),
     url(r'^users/new/$', users.create, name='wagtailusers_users_create'),
 

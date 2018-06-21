@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ...
 
+## [1.1.6] - 2018-06-22
+
+### Added
+
+- Add change password form
+
+
 ## [1.1.5] - 2018-06-21
 
 ### Fixed

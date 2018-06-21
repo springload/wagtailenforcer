@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ...
 
+## [1.1.4] - 2018-06-21
+
+### Fixed
+
+- Issue with dotted view ref in template url
+
 ## [1.1.3] - 2018-05-17
 
 ### Fixed

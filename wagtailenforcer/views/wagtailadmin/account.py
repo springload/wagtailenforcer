@@ -31,11 +31,6 @@ def password_management_enabled():
     return getattr(settings, "WAGTAIL_PASSWORD_MANAGEMENT_ENABLED", True)
 
 
-def password_reset_enabled():
-    return getattr(
-        settings, "WAGTAIL_PASSWORD_RESET_ENABLED", password_management_enabled()
-    )
-
 def change_password(request):
     if not password_management_enabled():
         raise Http404

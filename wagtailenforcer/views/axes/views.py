@@ -70,4 +70,4 @@ def reset(request, id):
     else:
         messages.error(request, _("User '{0}' was not blocked.").format(user))
 
-    return HttpResponseRedirect(reverse('wagtailenforcer.views.axes.views.list'))
+    return HttpResponseRedirect(reverse('wagtailenforcer_blocked_users'))

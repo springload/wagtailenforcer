@@ -28,7 +28,7 @@ install_requires = [
 
 setup(
     name='wagtailenforcer',
-    version='1.1.6',
+    version='1.1.7',
     description='WagtailEnforcer, the Wagtail arm of the law.',
     author='Springload',
     author_email='hello@springload.co.nz',

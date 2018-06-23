@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ...
 
+## [1.1.7] - 2018-06-24
+
+### Added
+
+- Fix reverse for blocklist
+
+
 ## [1.1.6] - 2018-06-22
 
 ### Added

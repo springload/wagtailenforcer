@@ -1,7 +1,7 @@
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
-from wagtail.wagtailcore import hooks
-from wagtail.wagtailadmin.menu import MenuItem
+from wagtail.core import hooks
+from wagtail.admin.menu import MenuItem
 
 
 @hooks.register('register_settings_menu_item')

@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from django.contrib.auth import views as django_auth_views
 
-from wagtail.wagtailadmin.views import account as wagtail_account_views
+from wagtail.admin.views import account as wagtail_account_views
 
 from axes.decorators import watch_login
 

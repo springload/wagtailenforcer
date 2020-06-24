@@ -1,4 +1,4 @@
-from wagtail.wagtailadmin.views import account as account_views
+from wagtail.admin.views import account as account_views
 
 
 def password_reset(request, **kwargs):

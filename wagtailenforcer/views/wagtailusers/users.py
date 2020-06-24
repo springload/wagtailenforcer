@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import permission_required
 
-from wagtail.wagtailcore.compat import AUTH_USER_APP_LABEL, AUTH_USER_MODEL_NAME
+from wagtail.core.compat import AUTH_USER_APP_LABEL, AUTH_USER_MODEL_NAME
 
 
 User = get_user_model()

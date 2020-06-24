@@ -10,7 +10,7 @@ from password_policies.conf import settings
 from password_policies.forms import PasswordPoliciesForm
 from password_policies.forms.fields import PasswordPoliciesField
 
-from wagtail.wagtailusers.forms import UserCreationForm as BaseUserCreationForm
+from wagtail.users.forms import UserCreationForm as BaseUserCreationForm
 
 from wagtailenforcer.validators import UpperCaseLetterValidator
 

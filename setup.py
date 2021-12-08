@@ -22,7 +22,7 @@ install_requires = [
     'wagtail>=2.1',
     'django>=2.0',
     'django-password-policies-iplweb>=0.4.4b1',
-    'django-axes>=3.0.0,<4.0.0',
+    'django-axes>=5.27.0.0,<5.28.0',
     'pyClamd>=0.3.17',
 ]
 
